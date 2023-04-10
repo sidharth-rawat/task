@@ -1,0 +1,47 @@
+{
+  "name": "nodets-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
+  
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.6.0",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "winston": "^3.8.2",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/express-rate-limit": "^6.0.0",
+    "@types/http-status-codes": "^1.2.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.4",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.7.23",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
+}
