@@ -6,10 +6,8 @@ import { allRoutes } from "./src/common/routes";
 const dotenv = require('dotenv');
 dotenv.config()
 
-const PORT = parseInt(process.env.PORT as string); // getting the port based on current environment.
+const PORT = parseInt(process.env.PORT as string); 
 
-/* Configure App instance*/
-// making a new object for App class.
 const app = new App(PORT, __middleware, allRoutes);
 
 try {

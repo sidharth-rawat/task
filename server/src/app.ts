@@ -7,7 +7,6 @@ export class App {
     public app: Application;
 
     private apiPath: string = '/api';
-    private staticPath: string = "/public";
 
     /**
      * @param port Port Application listens on
@@ -23,7 +22,7 @@ export class App {
         this.app = express();
         this.middleware(middleware);
         this.routes(routes);
-        this.assets(this.staticPath);
+
     }
 
     /**
@@ -53,21 +52,6 @@ export class App {
             console.log(apipath)
             this.app.use(apipath, routes[_routeKey]);
         }
-        /**
-         * this.api.use('/api', studentRouter);
-         * this.api.use('/api', facultyRouter);
-         * this.api.use('/api', staffRouter);
-        */
-
-        /** === SAMPLE OUTPUT ====
-         * this.api.use('/api/students', studentRouter);
-         * this.api.use('/api/admin', adminAuthMiddleware, adminRouter);
-        */
-    }
-
-    /* Enable express to serve up static assets*/
-    private assets(path: string) {
-        this.app.use(express.static(path));
     }
 
     /**

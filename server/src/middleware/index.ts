@@ -5,11 +5,6 @@ import { StatusCodes } from "http-status-codes";
 import rateLimit from "express-rate-limit";
 import morgan from 'morgan';
 
-// const corsOptions: CorsOptions = {
-//     origin: 'abc.com',
-//     preflightContinue: true,
-//     credentials: true,
-// }
 
 const apiLimiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
@@ -22,8 +17,7 @@ export const __middleware = [
     bodyParser.json(),
     bodyParser.urlencoded({ extended: true }),
     morgan(':method :url :status :res[content-length] - :response-time ms'),
-    // cors(corsOptions),
-    cors(), // cors("*")
+    cors(), 
     apiLimiter,
     (req: Request, res: Response, next: NextFunction) => {
       res.set('Cache-Control', 'no-store, max-age=0')
@@ -41,4 +35,5 @@ export const __middleware = [
       })
     }
 ];
+
 
