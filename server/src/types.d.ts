@@ -1,5 +1,3 @@
-// name of this file could be <project_name>.types.ts
-// project name - wisa; then file name = wisa.types.ts
 
 import mongoose = require('mongoose')
 
@@ -16,16 +14,6 @@ export interface IPagination {
   pageNo?: number,
 }
 
-// ! need to explain deep populate
-// const populate = {
-//   path: 'manager',
-//   populate: {
-//     path: 'organization',
-//     populate: {
-//       path: ''
-//     }
-//   }
-// }
 
 export interface IFindPaginationQuery{
   page_size?: number,
